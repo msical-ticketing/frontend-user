@@ -1,11 +1,11 @@
-import msicalABI from '@/assets/Msical.json'
+import msicalABI from '@/assets/Msical1155.json'
 import { useContractWrite, useWaitForTransaction } from 'wagmi'
 
 export const useTransfer = () => {
 	const { data, write, status } = useContractWrite({
 		address: `0x${process.env.NEXT_PUBLIC_MSICAL_COLLECTION}`,
 		abi: msicalABI.abi,
-		functionName: 'register',
+		functionName: 'burn',
 	})
 
 	const { isLoading, isSuccess } = useWaitForTransaction({
